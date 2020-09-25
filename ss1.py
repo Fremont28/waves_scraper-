@@ -1,3 +1,4 @@
+#import libraries 
 import numpy as np 
 import pandas as pd
 import sklearn 
@@ -12,7 +13,6 @@ class SurfLine():
         pass
     
     def surf_visuals(self,df):
-
         df=pd.read_table(df,delim_whitespace=True)
         df=df.iloc[1:df.shape[0]]
         cols=df.columns 
@@ -44,7 +44,6 @@ class SurfLine():
                 return "November"
             if x==12:
                 return "December"
-
         df['month']=df['MM'].apply(month_viz) 
 
         #histogram waveheight 
@@ -111,5 +110,4 @@ class SurfLine():
         
 if __name__=='__main__':
     surf=SurfLine()
-    surf.surf_visuals("https://www.ndbc.noaa.gov/data/realtime2/46235.txt") #waves_xx.csv 
-
+    surf.surf_visuals("https://www.ndbc.noaa.gov/data/realtime2/46235.txt") 
